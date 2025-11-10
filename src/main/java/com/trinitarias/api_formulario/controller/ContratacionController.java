@@ -44,17 +44,17 @@ public class ContratacionController {
 	@PostMapping
 	public ResponseEntity<?> crearContratacion(@RequestBody ContratacionDto contratacionDto){
 		ContratacionDto c=service.crear(contratacionDto);
-		if(c) {
+		if(c!=null) {
 			return ResponseEntity.status(HttpStatus.CREATED).body(c);
 		} else {
-			return ResponseEntity.status(HttpStatus.CREATED).body(c);
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(c);
 		}
 	}
 	
 	@PutMapping("/{id}")
 	public ResponseEntity<?> actualizarContratacion(@PathVariable Long id, @RequestBody ContratacionDto contratacionDto){
 		ContratacionDto c=service.actualizar(id, contratacionDto);
-		if(c) {
+		if(c!=null) {
 			return ResponseEntity.status(HttpStatus.OK).body(c);
 		} else {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(c);
