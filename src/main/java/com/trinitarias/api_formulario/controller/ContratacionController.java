@@ -41,7 +41,7 @@ public class ContratacionController {
 	
 	@PostMapping
 	public ResponseEntity<?> crearContratacion(@RequestBody ContratacionDto contratacionDto){
-		ContratacionDto c;
+		ContratacionDto c=service.crear(contratacionDto);
 		if(true) {
 			return ResponseEntity.status(HttpStatus.CREATED).body(c);
 		} else {
