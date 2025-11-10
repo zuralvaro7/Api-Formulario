@@ -42,7 +42,7 @@ public class ContratacionController {
 	@PostMapping
 	public ResponseEntity<?> crearContratacion(@RequestBody ContratacionDto contratacionDto){
 		ContratacionDto c=service.crear(contratacionDto);
-		if(true) {
+		if(c) {
 			return ResponseEntity.status(HttpStatus.CREATED).body(c);
 		} else {
 			return ResponseEntity.status(HttpStatus.CREATED).body(c);
@@ -52,7 +52,7 @@ public class ContratacionController {
 	@PutMapping("/{id}")
 	public ResponseEntity<?> actualizarContratacion(@PathVariable Long id, @RequestBody ContratacionDto contratacionDto){
 		ContratacionDto c=service.actualizar(id, contratacionDto);
-		if(contratacionDto!=null) {
+		if(c) {
 			return ResponseEntity.status(HttpStatus.OK).body(c);
 		} else {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(c);
@@ -62,9 +62,9 @@ public class ContratacionController {
 	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> borrarContratacion(@PathVariable Long id){
-		ContratacionDto c=service.borrar(id);
-		if(c!=null) {
-			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(c);
+		boolean c=service.borrar(id);
+		if(c) {
+			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(null);
 		} else {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
 		}
