@@ -17,18 +17,18 @@ public class ContratacionService {
         return null;
     }
     //Crear Dto
-    public boolean crear(ContratacionDto condto){
+    public ContratacionDto crear(ContratacionDto condto){
         ContratacionDto cdto = condto;
         if(cdto!=null){
             lista.add(cdto);
-        return true
+        return cdto
         }else{
-            return false;
+            return null;
         }
 
     }
     //Actualizar Dto
-    public boolean actualizar(Long id, ContratacionDto cd){
+    public ContratacionDto actualizar(Long id, ContratacionDto cd){
         for(ContratacionDto c lista){
             if(c.getId().equals(id)){
                 c.setDatosBancarios(cd.getDatosbancarios);
@@ -36,10 +36,10 @@ public class ContratacionService {
                 c.setDatosPersonales(cd.getDatosPersonales);
                 c.setDireccion(cd.getDireccion);
                 c.setMetodoPago(cd.getMetodoPago);
-                return true;
+                return c;
             }
         }
-        return false;
+        return null;
     }
     //Borrar
     public boolean borrar(Long id){
