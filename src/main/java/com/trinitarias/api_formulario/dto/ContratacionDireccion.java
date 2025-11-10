@@ -2,13 +2,13 @@ package com.trinitarias.api_formulario.dto;
 
 public class ContratacionDireccion {
 
-	private String tipovia;
+	private String tipoVia;
 	private String via;
 	private String numero;
 	private String piso;
 	private String puerta;
-	private String tipovivienda;
-	private int codpostal;
+	private String tipoVivienda;
+	private int codPostal;
 	private String provincia;
 	private String localidad;
 	private String pais;
@@ -20,24 +20,24 @@ public class ContratacionDireccion {
 	public ContratacionDireccion(String tipovia, String via, String numero, String piso, String puerta,
 			String tipovivienda, int codpostal, String provincia, String localidad, String pais) {
 		super();
-		this.tipovia = tipovia;
+		this.tipoVia = tipovia;
 		this.via = via;
 		this.numero = numero;
 		this.piso = piso;
 		this.puerta = puerta;
-		this.tipovivienda = tipovivienda;
-		this.codpostal = codpostal;
+		this.tipoVivienda = tipovivienda;
+		this.codPostal = codpostal;
 		this.provincia = provincia;
 		this.localidad = localidad;
 		this.pais = pais;
 	}
 
 	public String getTipovia() {
-		return tipovia;
+		return tipoVia;
 	}
 
 	public void setTipovia(String tipovia) {
-		this.tipovia = tipovia;
+		this.tipoVia = tipovia;
 	}
 
 	public String getVia() {
@@ -73,19 +73,19 @@ public class ContratacionDireccion {
 	}
 
 	public String getTipovivienda() {
-		return tipovivienda;
+		return tipoVivienda;
 	}
 
 	public void setTipovivienda(String tipovivienda) {
-		this.tipovivienda = tipovivienda;
+		this.tipoVivienda = tipovivienda;
 	}
 
 	public int getCodpostal() {
-		return codpostal;
+		return codPostal;
 	}
 
 	public void setCodpostal(int codpostal) {
-		this.codpostal = codpostal;
+		this.codPostal = codpostal;
 	}
 
 	public String getProvincia() {

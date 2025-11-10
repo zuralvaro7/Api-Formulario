@@ -4,7 +4,7 @@ public class ContratacionDatosPersonales {
 
 	private String nombre;
 	private String apellidos;
-	
+	private String fechaNacimiento;
 	private String genero;
 	private String nacionalidad;
 	private String identificacion;
@@ -16,11 +16,12 @@ public class ContratacionDatosPersonales {
 	}
 
 
-	public ContratacionDatosPersonales(String nombre, String apellidos, String genero, String nacionalidad,
+	public ContratacionDatosPersonales(String nombre, String apellidos, String fechaNacimiento, String genero, String nacionalidad,
 			String identificacion, String estadocivil) {
 		super();
 		this.nombre = nombre;
 		this.apellidos = apellidos;
+		this.fechaNacimiento = fechaNacimiento;
 		this.genero = genero;
 		this.nacionalidad = nacionalidad;
 		this.identificacion = identificacion;
@@ -45,6 +46,16 @@ public class ContratacionDatosPersonales {
 
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
+	}
+	
+
+	public String getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+
+
+	public void setFechaNacimiento(String fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
 	}
 
 

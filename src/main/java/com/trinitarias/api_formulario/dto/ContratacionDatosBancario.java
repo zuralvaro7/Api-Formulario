@@ -2,10 +2,10 @@ package com.trinitarias.api_formulario.dto;
 
 public class ContratacionDatosBancario {
 
-	private String nombrebanco;
+	private String nombreBanco;
 	private String iban;
 	private String bic;
-	private String tipocuenta;
+	private String tipoCuenta;
 	private String sucursal;
 	
 	public ContratacionDatosBancario() {
@@ -14,19 +14,19 @@ public class ContratacionDatosBancario {
 
 	public ContratacionDatosBancario(String nombrebanco, String iban, String bic, String tipocuenta, String sucursal) {
 		super();
-		this.nombrebanco = nombrebanco;
+		this.nombreBanco = nombrebanco;
 		this.iban = iban;
 		this.bic = bic;
-		this.tipocuenta = tipocuenta;
+		this.tipoCuenta = tipocuenta;
 		this.sucursal = sucursal;
 	}
 
 	public String getNombrebanco() {
-		return nombrebanco;
+		return nombreBanco;
 	}
 
 	public void setNombrebanco(String nombrebanco) {
-		this.nombrebanco = nombrebanco;
+		this.nombreBanco = nombrebanco;
 	}
 
 	public String getIban() {
@@ -46,11 +46,11 @@ public class ContratacionDatosBancario {
 	}
 
 	public String getTipocuenta() {
-		return tipocuenta;
+		return tipoCuenta;
 	}
 
 	public void setTipocuenta(String tipocuenta) {
-		this.tipocuenta = tipocuenta;
+		this.tipoCuenta = tipocuenta;
 	}
 
 	public String getSucursal() {

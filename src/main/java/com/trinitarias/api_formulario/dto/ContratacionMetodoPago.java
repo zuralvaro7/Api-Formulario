@@ -2,36 +2,45 @@ package com.trinitarias.api_formulario.dto;
 
 public class ContratacionMetodoPago {
 
-	private String tipopago;
-	private String nombretitular;
-	
+	private String tipoPago;
+	private String nombreTitular;
+	private String fechaCaducidad;
 	private int cvv;
 
 	public ContratacionMetodoPago() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public ContratacionMetodoPago(String tipopago, String nombretitular, int cvv) {
+	public ContratacionMetodoPago(String tipopago, String nombretitular, String fechaCaducidad, int cvv) {
 		super();
-		this.tipopago = tipopago;
-		this.nombretitular = nombretitular;
+		this.tipoPago = tipopago;
+		this.nombreTitular = nombretitular;
+		this.fechaCaducidad = fechaCaducidad;
 		this.cvv = cvv;
 	}
 
 	public String getTipopago() {
-		return tipopago;
+		return tipoPago;
 	}
 
 	public void setTipopago(String tipopago) {
-		this.tipopago = tipopago;
+		this.tipoPago = tipopago;
 	}
 
 	public String getNombretitular() {
-		return nombretitular;
+		return nombreTitular;
 	}
 
 	public void setNombretitular(String nombretitular) {
-		this.nombretitular = nombretitular;
+		this.nombreTitular = nombretitular;
+	}
+
+	public String getFechaCaducidad() {
+		return fechaCaducidad;
+	}
+
+	public void setFechaCaducidad(String fechaCaducidad) {
+		this.fechaCaducidad = fechaCaducidad;
 	}
 
 	public int getCvv() {
