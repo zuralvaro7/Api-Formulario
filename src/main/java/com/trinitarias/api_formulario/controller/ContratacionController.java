@@ -24,14 +24,14 @@ public class ContratacionController {
 	
 	@GetMapping()
 	public ResponseEntity<?> listarTodo(){
-		ContratacionDto c;
+		ContratacionDto c=service.obtener();
 		return ResponseEntity.status(HttpStatus.OK).body(c);
 		
 	}
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<?> listarId(@PathVariable Long id){
-		ContratacionDto c;
+		ContratacionDto c=service.verId(id);
 		if(true) {
 			return ResponseEntity.status(HttpStatus.OK).body(c);			
 		} else {
