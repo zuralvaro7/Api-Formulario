@@ -8,7 +8,7 @@ public class ContratacionService {
         return lista;
     }
     //Obtener un solo Dto
-    public ContratacionDto verId(int id){
+    public ContratacionDto verId(Long id){
         for (ContratacionDto c:lista){
             if(c.getId().equals(id)){
                 return c;
@@ -23,7 +23,7 @@ public class ContratacionService {
 
     }
     //Actualizar Dto
-    public void actualizar(int id, ContratacionDto cd){
+    public void actualizar(Long id, ContratacionDto cd){
         for(ContratacionDto c lista){
             if(c.getId().equals(id)){
                 c.setDatosBancarios(cd.getDatosbancarios);
@@ -35,7 +35,7 @@ public class ContratacionService {
         }
     }
     //Borrar
-    public void Borrar(int id){
+    public void Borrar(Long id){
         for (ContratacionDto c:lista){
             if(c.getId().equals(id)){
                 lista.remove(c);
