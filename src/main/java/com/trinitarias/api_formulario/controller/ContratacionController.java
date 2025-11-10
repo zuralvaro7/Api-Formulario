@@ -51,7 +51,7 @@ public class ContratacionController {
 	
 	@PutMapping("/{id}")
 	public ResponseEntity<?> actualizarContratacion(@PathVariable Long id, @RequestBody ContratacionDto contratacionDto){
-		ContratacionDto c;
+		ContratacionDto c=service.actualizar(id, contratacionDto);
 		if(true) {
 			return ResponseEntity.status(HttpStatus.OK).body(c);
 		} else {
