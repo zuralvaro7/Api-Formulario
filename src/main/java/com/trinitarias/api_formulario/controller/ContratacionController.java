@@ -1,6 +1,6 @@
 package com.trinitarias.api_formulario.controller;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,8 +25,8 @@ public class ContratacionController {
 	ContratacionService service;
 	
 	@GetMapping()
-	public ResponseEntity<List<ContratacionDto>> listarTodo(){
-		List<ContratacionDto> c=service.obtener();
+	public ResponseEntity<ArrayList<ContratacionDto>> listarTodo(){
+		ArrayList<ContratacionDto> c=service.obtener();
 		return ResponseEntity.status(HttpStatus.OK).body(c);
 		
 	}
