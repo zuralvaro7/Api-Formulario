@@ -14,7 +14,7 @@ public class ContratacionDto {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ContratacionDto(Long id, ContratacionDatosBancario datosBancarios, ContratacionDatosContacto datosContacto,
+	public ContratacionDto(ContratacionDatosBancario datosBancarios, ContratacionDatosContacto datosContacto,
 			ContratacionDatosPersonales datosPersonales, ContratacionDireccion direccion,
 			ContratacionMetodoPago metodoPago) {
 		super();
