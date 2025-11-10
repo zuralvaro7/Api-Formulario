@@ -61,9 +61,9 @@ public class ContratacionController {
 	}
 	
 	@DeleteMapping("/{id}")
-	public ResponseEntity<?> borrarContratacion(@PathVariable Long id, @RequestBody ContratacionDto contratacionDto){
-		ContratacionDto c;
-		if(true) {
+	public ResponseEntity<?> borrarContratacion(@PathVariable Long id){
+		ContratacionDto c=service.borrar(id);
+		if(c!=null) {
 			return ResponseEntity.status(HttpStatus.NO_CONTENT).body(c);
 		} else {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
