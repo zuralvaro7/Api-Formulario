@@ -3,7 +3,7 @@ package com.trinitarias.api_formulario.dto;
 public class ContratacionDto {
 
 	private Long id;
-	private static Long cont;
+	private static Long cont=(long) 0;
 	private ContratacionDatosBancario datosBancarios;
 	private ContratacionDatosContacto datosContacto;
 	private ContratacionDatosPersonales datosPersonales;
@@ -12,6 +12,9 @@ public class ContratacionDto {
 	
 	public ContratacionDto() {
 		// TODO Auto-generated constructor stub
+		cont++;
+		this.id=cont;
+		
 	}
 
 	public ContratacionDto(ContratacionDatosBancario datosBancarios, ContratacionDatosContacto datosContacto,
