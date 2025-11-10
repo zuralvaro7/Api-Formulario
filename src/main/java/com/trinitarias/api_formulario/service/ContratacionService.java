@@ -26,11 +26,11 @@ public class ContratacionService {
     public void actualizar(int id, ContratacionDto cd){
         for(ContratacionDto c lista){
             if(c.getId().equals(id)){
-                c.setDatosBancarios(datosbancarios);
-                c.setDatosContacto(datosContacto);
-                c.setDatosPersonales(datosPersonales);
-                c.setDireccion(direccion);
-                c.setMetodoPago(metodoPago);
+                c.setDatosBancarios(cd.getDatosbancarios);
+                c.setDatosContacto(cd.getDatosContacto);
+                c.setDatosPersonales(cd.getDatosPersonales);
+                c.setDireccion(cd.getDireccion);
+                c.setMetodoPago(cd.getMetodoPago);
             }
         }
     }
