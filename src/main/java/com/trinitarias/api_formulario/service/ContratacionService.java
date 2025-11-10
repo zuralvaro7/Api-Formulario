@@ -35,7 +35,7 @@ public class ContratacionService {
         }
     }
     //Borrar
-    public void Borrar(Long id){
+    public void borrar(Long id){
         for (ContratacionDto c:lista){
             if(c.getId().equals(id)){
                 lista.remove(c);
