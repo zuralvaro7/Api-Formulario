@@ -1,4 +1,11 @@
 package com.trinitarias.api_formulario.service;
+
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Service;
+
+import com.trinitarias.api_formulario.dto.ContratacionDto;
+
 @Service
 public class ContratacionService {
     private ArrayList<ContratacionDto>lista=new ArrayList();
@@ -21,7 +28,7 @@ public class ContratacionService {
         ContratacionDto cdto = condto;
         if(cdto!=null){
             lista.add(cdto);
-        return cdto
+        return cdto;
         }else{
             return null;
         }
@@ -29,13 +36,13 @@ public class ContratacionService {
     }
     //Actualizar Dto
     public ContratacionDto actualizar(Long id, ContratacionDto cd){
-        for(ContratacionDto c lista){
+        for(ContratacionDto c:lista){
             if(c.getId().equals(id)){
-                c.setDatosBancarios(cd.getDatosbancarios);
-                c.setDatosContacto(cd.getDatosContacto);
-                c.setDatosPersonales(cd.getDatosPersonales);
-                c.setDireccion(cd.getDireccion);
-                c.setMetodoPago(cd.getMetodoPago);
+                c.setDatosBancarios(cd.getDatosBancarios());
+                c.setDatosContacto(cd.getDatosContacto());
+                c.setDatosPersonales(cd.getDatosPersonales());
+                c.setDireccion(cd.getDireccion());
+                c.setMetodoPago(cd.getMetodoPago());
                 return c;
             }
         }
