@@ -4,6 +4,8 @@ import org.springframework.data.annotation.Id;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Table;
 
 @Entity //poner @entity como el @service e importar
@@ -11,10 +13,12 @@ import jakarta.persistence.Table;
 public class ContratacionEntityDatosBancario {
 
 	@Id //indicar que esta es la clave primaria 
+	//HACE QUE LA BASE DE DATOS GENERE AUTOMATICAMENTE EL ID
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	//atributos
-	@Column(name="nombre_banco", nullable=false) //indicando que es una columna el nombre que tendra esa columna y que no puede ser nula
+	@Column(name="nombre_banco") //indicando que es una columna el nombre que tendra esa columna 
 	private String nombreBanco;
 	
 	@Column(name="iban")
@@ -28,11 +32,11 @@ public class ContratacionEntityDatosBancario {
 	
 	@Column(name="sucursal")
 	private String sucursal;
-	
+	//CONSTRUCTOR
 	public ContratacionEntityDatosBancario() {
 		// TODO Auto-generated constructor stub
 	}
-
+	//CONSTRUCTOR
 	public ContratacionEntityDatosBancario(Long id, String nombreBanco, String iban, String bic, String tipoCuenta,
 			String sucursal) {
 		super();
@@ -43,7 +47,7 @@ public class ContratacionEntityDatosBancario {
 		this.tipoCuenta = tipoCuenta;
 		this.sucursal = sucursal;
 	}
-
+	//GETTER Y SETTERS
 	public Long getId() {
 		return id;
 	}
