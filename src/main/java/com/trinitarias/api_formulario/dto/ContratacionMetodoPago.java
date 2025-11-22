@@ -1,16 +1,16 @@
 package com.trinitarias.api_formulario.dto;
 
 public class ContratacionMetodoPago {
-
+	//ATRIBUTOS
 	private String tipoPago;
 	private String nombreTitular;
 	private String fechaCaducidad;
 	private int cvv;
-
+	//CONSTRUCTOR VACIO
 	public ContratacionMetodoPago() {
-		// TODO Auto-generated constructor stub
+		
 	}
-	
+	//CONSTRUCTOR CON ATRIBUTOS
 	public ContratacionMetodoPago(String tipopago, String nombretitular, String fechaCaducidad, int cvv) {
 		super();
 		this.tipoPago = tipopago;
@@ -18,7 +18,7 @@ public class ContratacionMetodoPago {
 		this.fechaCaducidad = fechaCaducidad;
 		this.cvv = cvv;
 	}
-
+	//GETTER Y SETTERS
 	public String getTipopago() {
 		return tipoPago;
 	}

@@ -1,7 +1,8 @@
 package com.trinitarias.api_formulario.dto;
 
+	//CONTIENE TODOS LOS DTOS
 public class ContratacionDto {
-
+	//ATRIBUTOS (OBJETOS REFERENCIA A LOS OTROS DTO)
 	private Long id;
 	private static Long cont;
 	private ContratacionDatosBancario datosBancarios;
@@ -9,11 +10,11 @@ public class ContratacionDto {
 	private ContratacionDatosPersonales datosPersonales;
 	private ContratacionDireccion direccion;
 	private ContratacionMetodoPago metodoPago;
-	
+	//CONSTRUCTOR VACIO
 	public ContratacionDto() {
-		// TODO Auto-generated constructor stub
+		
 	}
-
+	//CONSTRUCTOR CON ATRIBUTOS
 	public ContratacionDto(ContratacionDatosBancario datosBancarios, ContratacionDatosContacto datosContacto,
 			ContratacionDatosPersonales datosPersonales, ContratacionDireccion direccion,
 			ContratacionMetodoPago metodoPago) {
@@ -25,7 +26,7 @@ public class ContratacionDto {
 		this.direccion = direccion;
 		this.metodoPago = metodoPago;
 	}
-
+	//GETTER Y SETTERS
 	public Long getId() {
 		return id;
 	}

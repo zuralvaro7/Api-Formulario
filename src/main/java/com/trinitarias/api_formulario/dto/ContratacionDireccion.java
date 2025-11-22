@@ -1,7 +1,7 @@
 package com.trinitarias.api_formulario.dto;
 
 public class ContratacionDireccion {
-
+	//ATRIBUTOS
 	private String tipoVia;
 	private String via;
 	private String numero;
@@ -12,11 +12,11 @@ public class ContratacionDireccion {
 	private String provincia;
 	private String localidad;
 	private String pais;
-	
+	//CONSTRUCTOR VACIO
 	public ContratacionDireccion() {
 		// TODO Auto-generated constructor stub
 	}
-
+	//CONTRUCTOR CON ATRIBUTOS
 	public ContratacionDireccion(String tipovia, String via, String numero, String piso, String puerta,
 			String tipovivienda, int codpostal, String provincia, String localidad, String pais) {
 		super();
@@ -31,7 +31,7 @@ public class ContratacionDireccion {
 		this.localidad = localidad;
 		this.pais = pais;
 	}
-
+	//GETTER Y SETTERS
 	public String getTipovia() {
 		return tipoVia;
 	}

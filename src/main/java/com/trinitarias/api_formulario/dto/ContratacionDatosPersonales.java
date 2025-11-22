@@ -1,7 +1,7 @@
 package com.trinitarias.api_formulario.dto;
 
 public class ContratacionDatosPersonales {
-
+	//ATRIBUTOS
 	private String nombre;
 	private String apellidos;
 	private String fechaNacimiento;
@@ -9,13 +9,11 @@ public class ContratacionDatosPersonales {
 	private String nacionalidad;
 	private String identificacion;
 	private String estadocivil;
-	
-	
+	//CONSTRUCTOR VACIO
 	public ContratacionDatosPersonales() {
-		// TODO Auto-generated constructor stub
+	
 	}
-
-
+	//CONSTRUCTOR CON ATRIBUTOS
 	public ContratacionDatosPersonales(String nombre, String apellidos, String fechaNacimiento, String genero, String nacionalidad,
 			String identificacion, String estadocivil) {
 		super();
@@ -27,8 +25,7 @@ public class ContratacionDatosPersonales {
 		this.identificacion = identificacion;
 		this.estadocivil = estadocivil;
 	}
-
-
+	//GETTER Y SETTERS
 	public String getNombre() {
 		return nombre;
 	}

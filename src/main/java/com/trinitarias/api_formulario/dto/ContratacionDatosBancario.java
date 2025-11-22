@@ -1,17 +1,17 @@
 package com.trinitarias.api_formulario.dto;
 
 public class ContratacionDatosBancario {
-
+	//ATRIBUTOS
 	private String nombreBanco;
 	private String iban;
 	private String bic;
 	private String tipoCuenta;
 	private String sucursal;
-	
+	//CONSTRUCTOR VACIO
 	public ContratacionDatosBancario() {
-		// TODO Auto-generated constructor stub
+		
 	}
-
+	//CONSTRUCTOR CON ATRIBUTOS
 	public ContratacionDatosBancario(String nombrebanco, String iban, String bic, String tipocuenta, String sucursal) {
 		super();
 		this.nombreBanco = nombrebanco;
@@ -20,7 +20,7 @@ public class ContratacionDatosBancario {
 		this.tipoCuenta = tipocuenta;
 		this.sucursal = sucursal;
 	}
-
+	//GETTER Y SETTERS
 	public String getNombrebanco() {
 		return nombreBanco;
 	}
