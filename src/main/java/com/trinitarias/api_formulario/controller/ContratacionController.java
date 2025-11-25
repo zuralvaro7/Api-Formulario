@@ -51,7 +51,7 @@ public class ContratacionController {
 		validator.validate(contratacionDto, errors);
 
 		if (errors.hasErrors()) {
-			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors);
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors.getAllErrors());
 		}
 		ContratacionDto c = service.crear(contratacionDto);
 		if (c != null) {
