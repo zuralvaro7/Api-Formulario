@@ -51,6 +51,7 @@ public class ContratacionController {
 		validator.validate(contratacionDto, errors);
 
 		if (errors.hasErrors()) {
+			//Se ha solucionado el retorno la solucion era poner el metodo
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errors.getAllErrors());
 		}
 		ContratacionDto c = service.crear(contratacionDto);
