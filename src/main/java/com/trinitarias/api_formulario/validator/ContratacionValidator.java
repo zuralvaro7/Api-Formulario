@@ -33,33 +33,46 @@ public class ContratacionValidator implements Validator {
 		if (cntcDto.getDatosPersonales().getApellidos().isBlank()) {
 			errors.rejectValue("datosPersonales.apellido", "i18n.apellido.obligatorio", "El campo debe ser obligatorio");
 		}
-		LocalDate fechahoy=LocalDate.now();
-		LocalDate fechaNacimiento= LocalDate.parse(cntcDto.getDatosPersonales().getFechaNacimiento());
 		
-		if ( fechaNacimiento.isAfter(fechahoy.minusYears(16))) {
+		//Valida si es mayor de 16 años solo cuando el campo esta con información
+		if(!cntcDto.getDatosPersonales().getFechaNacimiento().isBlank()) {
+			LocalDate fechahoy=LocalDate.now();
+			LocalDate fechaNacimiento= LocalDate.parse(cntcDto.getDatosPersonales().getFechaNacimiento());
 			
+			if ( fechaNacimiento.isAfter(fechahoy.minusYears(16))) {
+				errors.rejectValue("datosPersonales.fechaNacimiento", "i18n.fechaNacimiento.obligatorio", "La edad tiene que ser de mas de 16 años");
+			}
 		}
-		
 		
 		if (cntcDto.getDatosPersonales().getNacionalidad().isBlank()) {
 			errors.rejectValue("datosPersonales.nacionalidad", "i18n.nacionalidad.obligatorio", "El campo debe ser obligatorio");
 		}
 		
+		// Valida la letra del dni
+		String dni=cntcDto.getDatosPersonales().getIdentificacion();
+		String letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+        int dniIndice = Integer.parseInt(dni.substring(0, 8)) % 23;
+        char letra = letras.charAt(dniIndice);
+		
 		if (cntcDto.getDatosPersonales().getIdentificacion().isBlank()) {
 			errors.rejectValue("datosPersonales.identificacion", "i18n.identificacion.obligatorio", "El campo debe ser obligatorio");
-		} else if (cntcDto.getDatosPersonales().getIdentificacion().length()==8) {// validar bien
-			errors.rejectValue("datosPersonales.identificacion", "i18n.identificacion.faltan", "El campo no es correcto");
 		} else if (cntcDto.getDatosPersonales().getIdentificacion().matches("\\d{8}")) {
 			// valida si tiene los 8 numeros y la letra
 			errors.rejectValue("datosPersonales.identificacion", "i18n.identificacion.faltan", "Falta la letra");
-		}
+		}else if (dni.charAt(8)==letra) {// validar letra del dni
+			errors.rejectValue("datosPersonales.identificacion", "i18n.identificacion.faltan", "La letra no es correcta");
+		} 
 		
-		/*if (cntcDto.getDatosPersonales().getEstadocivil()) {
-			
-		}*/
 		
 		//DAT0S CONTACTO
-		
+		if (cntcDto.getDatosContacto().getMovil()==0) {
+			errors.rejectValue("datosContacto.movil", "i18n.movil.obligatorio", "El campo debe ser obligatorio");
+		} else if (cntcDto.getDatosContacto().getMovil()!=9) {
+			errors.rejectValue("datosContacto.movil", "i18n.movil.obligatorio", "El campo debe tener 9 dijitos");
+		}
+		if (cntcDto.getDatosContacto().getFijo()!=9) {
+			errors.rejectValue("datosContacto.fijo", "i18n.fijo.obligatorio", "El campo debe tener 9 dijitos");
+		}
 		if (cntcDto.getDatosContacto().getEmail().isBlank()) {
 			errors.rejectValue("datosContacto.email", "i18n.email.obligatorio", "El campo debe ser obligatorio");
 		}
@@ -80,6 +93,8 @@ public class ContratacionValidator implements Validator {
 		}
 		if (cntcDto.getDireccion().getCodpostal()==0) {
 			errors.rejectValue("direccion.codPostal", "i18n.codpostal.obligatorio", "El campo debe ser obligatorio");
+		} else if (cntcDto.getDireccion().getCodpostal()!=5) {
+			errors.rejectValue("direccion.codPostal", "i18n.codpostal.incompleto", "El campo debe tener 5 digitos");
 		}
 		if (cntcDto.getDireccion().getProvincia().isBlank()) {
 			errors.rejectValue("direccion.provincia", "i18n.provincia.obligatorio", "El campo debe ser obligatorio");
@@ -103,13 +118,18 @@ public class ContratacionValidator implements Validator {
 		}
 		if (cntcDto.getMetodoPago().getCvv()==0){
 			errors.rejectValue("metodoPago.cvv", "i18n.cvv.obligatorio", "El campo debe ser obligatorio");
+		} else if (cntcDto.getMetodoPago().getCvv()!=3){
+			errors.rejectValue("metodoPago.cvv", "i18n.cvv.faltan", "El campo debe tener 3 digitos");
 		}
+		
 		//DATOS BANCARIOS
 		if(cntcDto.getDatosBancarios().getNombrebanco().isBlank()) {
 			errors.rejectValue("datosBancarios.nombreBanco", "i18n.nombreBanco.obligatorio", "El campo debe ser obligatorio");
 		}
 		if(cntcDto.getDatosBancarios().getIban().isBlank()) {
 			errors.rejectValue("datosBancarios.iban", "i18n.iban.obligatorio", "El campo debe ser obligatorio");
+		}else if(cntcDto.getDatosBancarios().getIban().length()!=20) {
+			errors.rejectValue("datosBancarios.iban", "i18n.iban.incompleto", "El campo debe tener 20 digitos");
 		}
 		if(cntcDto.getDatosBancarios().getTipocuenta().isBlank()) {
 			errors.rejectValue("datosBancarios.tipoCuenta", "i18n.tipoCuenta.obligatorio", "El campo debe ser obligatorio");
