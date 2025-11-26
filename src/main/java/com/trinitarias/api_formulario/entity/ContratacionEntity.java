@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="metodoPago")
+@Table(name="contrataciones")
 public class ContratacionEntity {
 
 	//ID AUTOGENERADO
