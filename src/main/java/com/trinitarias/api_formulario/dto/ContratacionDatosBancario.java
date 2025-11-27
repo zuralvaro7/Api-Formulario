@@ -21,12 +21,12 @@ public class ContratacionDatosBancario {
 		this.sucursal = sucursal;
 	}
 
-	public String getNombrebanco() {
+	public String getNombreBanco() {
 		return nombreBanco;
 	}
 
-	public void setNombrebanco(String nombrebanco) {
-		this.nombreBanco = nombrebanco;
+	public void setNombreBanco(String nombreBanco) {
+		this.nombreBanco = nombreBanco;
 	}
 
 	public String getIban() {
@@ -45,12 +45,12 @@ public class ContratacionDatosBancario {
 		this.bic = bic;
 	}
 
-	public String getTipocuenta() {
+	public String getTipoCuenta() {
 		return tipoCuenta;
 	}
 
-	public void setTipocuenta(String tipocuenta) {
-		this.tipoCuenta = tipocuenta;
+	public void setTipoCuenta(String tipoCuenta) {
+		this.tipoCuenta = tipoCuenta;
 	}
 
 	public String getSucursal() {
@@ -60,6 +60,8 @@ public class ContratacionDatosBancario {
 	public void setSucursal(String sucursal) {
 		this.sucursal = sucursal;
 	}
+
+	
 	
 	
 }

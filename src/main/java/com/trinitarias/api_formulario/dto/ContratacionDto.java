@@ -37,6 +37,14 @@ public class ContratacionDto {
 		this.id = id;
 	}
 
+	public static Long getCont() {
+		return cont;
+	}
+
+	public static void setCont(Long cont) {
+		ContratacionDto.cont = cont;
+	}
+
 	public ContratacionDatosBancario getDatosBancarios() {
 		return datosBancarios;
 	}
@@ -76,6 +84,8 @@ public class ContratacionDto {
 	public void setMetodoPago(ContratacionMetodoPago metodoPago) {
 		this.metodoPago = metodoPago;
 	}
+
+	
 	
 	
 	

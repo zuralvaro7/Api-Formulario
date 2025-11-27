@@ -32,12 +32,12 @@ public class ContratacionDireccion {
 		this.pais = pais;
 	}
 
-	public String getTipovia() {
+	public String getTipoVia() {
 		return tipoVia;
 	}
 
-	public void setTipovia(String tipovia) {
-		this.tipoVia = tipovia;
+	public void setTipoVia(String tipoVia) {
+		this.tipoVia = tipoVia;
 	}
 
 	public String getVia() {
@@ -72,20 +72,20 @@ public class ContratacionDireccion {
 		this.puerta = puerta;
 	}
 
-	public String getTipovivienda() {
+	public String getTipoVivienda() {
 		return tipoVivienda;
 	}
 
-	public void setTipovivienda(String tipoVivienda) {
+	public void setTipoVivienda(String tipoVivienda) {
 		this.tipoVivienda = tipoVivienda;
 	}
 
-	public int getCodpostal() {
+	public int getCodPostal() {
 		return codPostal;
 	}
 
-	public void setCodpostal(int codpostal) {
-		this.codPostal = codpostal;
+	public void setCodPostal(int codPostal) {
+		this.codPostal = codPostal;
 	}
 
 	public String getProvincia() {
@@ -111,6 +111,8 @@ public class ContratacionDireccion {
 	public void setPais(String pais) {
 		this.pais = pais;
 	}
+
+	
 	
 	
 }

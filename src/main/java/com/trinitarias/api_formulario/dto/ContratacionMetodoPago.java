@@ -19,20 +19,20 @@ public class ContratacionMetodoPago {
 		this.cvv = cvv;
 	}
 
-	public String getTipopago() {
+	public String getTipoPago() {
 		return tipoPago;
 	}
 
-	public void setTipopago(String tipopago) {
-		this.tipoPago = tipopago;
+	public void setTipoPago(String tipoPago) {
+		this.tipoPago = tipoPago;
 	}
 
-	public String getNombretitular() {
+	public String getNombreTitular() {
 		return nombreTitular;
 	}
 
-	public void setNombretitular(String nombretitular) {
-		this.nombreTitular = nombretitular;
+	public void setNombreTitular(String nombreTitular) {
+		this.nombreTitular = nombreTitular;
 	}
 
 	public String getFechaCaducidad() {
@@ -50,6 +50,8 @@ public class ContratacionMetodoPago {
 	public void setCvv(int cvv) {
 		this.cvv = cvv;
 	}
+
+	
 
 	
 }
