@@ -28,7 +28,7 @@ public class ContratacionService {
         ContratacionDto cdto = condto;
         if(cdto!=null){
             lista.add(cdto);
-        return cdto;
+            return cdto;
         }else{
             return null;
         }
