@@ -15,13 +15,11 @@ public class ContratacionValidator implements Validator {
 
 	@Override
 	public boolean supports(Class<?> clazz) {
-		// TODO Auto-generated method stub
-		return false;
+		return ContratacionDto.class.equals(clazz);
 	}
 	
 	@Override
 	public void validate(Object target, Errors errors) {
-		// TODO Auto-generated method stub
 		ContratacionDto cntcDto = (ContratacionDto) target;
 		
 		
@@ -50,21 +48,19 @@ public class ContratacionValidator implements Validator {
 		
 		// Valida la letra del dni
 		String dni=cntcDto.getDatosPersonales().getIdentificacion();
-		String letras = "TRWAGMYFPDXBNJZSQVHLCKE";
-        int dniIndice = Integer.parseInt(dni.substring(0, 8)) % 23;
-        char letra = letras.charAt(dniIndice);
+		char letra = validarDNI(dni);
 		
 		if (cntcDto.getDatosPersonales().getIdentificacion().isBlank()) {
 			errors.rejectValue("datosPersonales.identificacion", "i18n.identificacion.obligatorio", "El campo debe ser obligatorio");
 		} else if (cntcDto.getDatosPersonales().getIdentificacion().matches("\\d{8}")) {
 			// valida si tiene los 8 numeros y la letra
 			errors.rejectValue("datosPersonales.identificacion", "i18n.identificacion.faltan", "Falta la letra");
-		}else if (dni.charAt(8)==letra) {// validar letra del dni
+		}else if (dni.charAt(8)!=letra) {// validar letra del dni
 			errors.rejectValue("datosPersonales.identificacion", "i18n.identificacion.faltan", "La letra no es correcta");
 		} 
 		
 		
-		//DAT0S CONTACTO
+		//DATOS CONTACTO
 		if (cntcDto.getDatosContacto().getMovil()==0) {
 			errors.rejectValue("datosContacto.movil", "i18n.movil.obligatorio", "El campo debe ser obligatorio");
 		} else if (cntcDto.getDatosContacto().getMovil()!=9) {
@@ -137,6 +133,18 @@ public class ContratacionValidator implements Validator {
 		if(cntcDto.getDatosBancarios().getSucursal().isBlank()) {
 			errors.rejectValue("datosBancarios.sucursal", "i18n.sucursal.obligatorio", "El campo debe ser obligatorio");
 		}
+		
 	}
 
+	private char validarDNI(String dni) {
+		String letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+		char letra = 0;
+		try {
+			int dniIndice = Integer.parseInt(dni.substring(0, 8)) % 23;
+			letra = letras.charAt(dniIndice);
+		} catch (NumberFormatException e) {
+			e.printStackTrace();
+		}
+		return letra;
+	}
 }
