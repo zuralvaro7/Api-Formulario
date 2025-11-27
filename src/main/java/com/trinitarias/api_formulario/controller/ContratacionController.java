@@ -48,7 +48,7 @@ public class ContratacionController {
 
 	@PostMapping
 	public ResponseEntity<?> crearContratacion(@RequestBody ContratacionDto contratacionDto, Errors errors) {
-		validator.validate(contratacionDto, errors);
+		//validator.validate(contratacionDto, errors);
 
 		if (errors.hasErrors()) {
 			//Se ha solucionado el retorno la solucion era poner el metodo

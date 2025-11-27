@@ -11,10 +11,10 @@ public class ContratacionMetodoPago {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public ContratacionMetodoPago(String tipopago, String nombretitular, String fechaCaducidad, int cvv) {
+	public ContratacionMetodoPago(String tipoPago, String nombreTitular, String fechaCaducidad, int cvv) {
 		super();
-		this.tipoPago = tipopago;
-		this.nombreTitular = nombretitular;
+		this.tipoPago = tipoPago;
+		this.nombreTitular = nombreTitular;
 		this.fechaCaducidad = fechaCaducidad;
 		this.cvv = cvv;
 	}

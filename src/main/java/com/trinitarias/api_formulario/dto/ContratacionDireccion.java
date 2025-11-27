@@ -17,16 +17,16 @@ public class ContratacionDireccion {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ContratacionDireccion(String tipovia, String via, String numero, String piso, String puerta,
-			String tipovivienda, int codpostal, String provincia, String localidad, String pais) {
+	public ContratacionDireccion(String tipoVia, String via, String numero, String piso, String puerta,
+			String tipoVivienda, int codPostal, String provincia, String localidad, String pais) {
 		super();
-		this.tipoVia = tipovia;
+		this.tipoVia = tipoVia;
 		this.via = via;
 		this.numero = numero;
 		this.piso = piso;
 		this.puerta = puerta;
-		this.tipoVivienda = tipovivienda;
-		this.codPostal = codpostal;
+		this.tipoVivienda = tipoVivienda;
+		this.codPostal = codPostal;
 		this.provincia = provincia;
 		this.localidad = localidad;
 		this.pais = pais;
@@ -76,8 +76,8 @@ public class ContratacionDireccion {
 		return tipoVivienda;
 	}
 
-	public void setTipovivienda(String tipovivienda) {
-		this.tipoVivienda = tipovivienda;
+	public void setTipovivienda(String tipoVivienda) {
+		this.tipoVivienda = tipoVivienda;
 	}
 
 	public int getCodpostal() {

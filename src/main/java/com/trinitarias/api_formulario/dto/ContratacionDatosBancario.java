@@ -12,12 +12,12 @@ public class ContratacionDatosBancario {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ContratacionDatosBancario(String nombrebanco, String iban, String bic, String tipocuenta, String sucursal) {
+	public ContratacionDatosBancario(String nombreBanco, String iban, String bic, String tipoCuenta, String sucursal) {
 		super();
-		this.nombreBanco = nombrebanco;
+		this.nombreBanco = nombreBanco;
 		this.iban = iban;
 		this.bic = bic;
-		this.tipoCuenta = tipocuenta;
+		this.tipoCuenta = tipoCuenta;
 		this.sucursal = sucursal;
 	}
 
