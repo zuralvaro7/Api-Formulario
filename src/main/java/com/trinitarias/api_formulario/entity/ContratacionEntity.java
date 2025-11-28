@@ -450,6 +450,7 @@ public class ContratacionEntity {
 		entity.setFechaNacimiento(dto.getDatosPersonales().getFechaNacimiento());
 		entity.setGenero(dto.getDatosPersonales().getGenero());
 		entity.setNacionalidad(dto.getDatosPersonales().getNacionalidad());
+		entity.setTipoIdentificacion(dto.getDatosPersonales().getTipoIdentificacion());
 		entity.setNumeroIdentificacion(dto.getDatosPersonales().getNumIdentificacion());
 		entity.setEstadocivil(dto.getDatosPersonales().getEstadocivil());
 		

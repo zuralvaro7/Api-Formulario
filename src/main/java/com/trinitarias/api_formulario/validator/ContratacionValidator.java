@@ -62,23 +62,25 @@ public class ContratacionValidator implements Validator {
 					"El campo debe ser obligatorio");
 		}
 
-		
+		if(cntcDto.getDatosPersonales().getTipoIdentificacion().isBlank()) {
+			errors.rejectValue("datosPersonales.tipoidentificacion", "i18n.tipoidentificacion.obligatorio","El campo debe ser obligatorio");
+		}
 		
 		// Valida la letra del dni
-		if (cntcDto.getDatosPersonales().getIdentificacion().isBlank()) {
-			errors.rejectValue("datosPersonales.identificacion", "i18n.identificacion.obligatorio","El campo debe ser obligatorio");
-		} else if (cntcDto.getDatosPersonales().getIdentificacion().length()<9) {
-			errors.rejectValue("datosPersonales.identificacion", "i18n.identificacion.numeros", "El campo debe tener 8 digitos y 1 letra");
-		}if (cntcDto.getDatosPersonales().getIdentificacion().matches("\\d{8}")) {
+		if (cntcDto.getDatosPersonales().getNumIdentificacion().isBlank()) {
+			errors.rejectValue("datosPersonales.numeroidentificacion", "i18n.numeroidentificacion.obligatorio","El campo debe ser obligatorio");
+		} else if (cntcDto.getDatosPersonales().getNumIdentificacion().length()<9) {
+			errors.rejectValue("datosPersonales.numeroidentificacion", "i18n.numeroidentificacion.numeros", "El campo debe tener 8 digitos y 1 letra");
+		}if (cntcDto.getDatosPersonales().getNumIdentificacion().matches("\\d{8}")) {
 			// valida si tiene los 8 numeros y la letra
-			errors.rejectValue("datosPersonales.identificacion", "i18n.identificacion.faltan", "Falta la letra");
-		} else if (!cntcDto.getDatosPersonales().getIdentificacion().matches("\\d{8}[A-Za-z]")){
-			errors.rejectValue("datosPersonales.identificacion", "i18n.identificacion.formato", "El formato del dni no es correcto");
+			errors.rejectValue("datosPersonales.numeroidentificacion", "i18n.numeroidentificacion.faltan", "Falta la letra");
+		} else if (!cntcDto.getDatosPersonales().getNumIdentificacion().matches("\\d{8}[A-Za-z]")){
+			errors.rejectValue("datosPersonales.numeroidentificacion", "i18n.numeroidentificacion.formato", "El formato del dni no es correcto");
 		} else {
-			String dni = cntcDto.getDatosPersonales().getIdentificacion();
+			String dni = cntcDto.getDatosPersonales().getNumIdentificacion();
 			char letra = validarDNI(dni);
 			if (dni.charAt(8) != letra) {// validar letra del dni
-				errors.rejectValue("datosPersonales.identificacion", "i18n.identificacion.faltan", "La letra no es correcta");
+				errors.rejectValue("datosPersonales.numeroidentificacion", "i18n.numeroidentificacion.faltan", "La letra no es correcta");
 			}
 		}
 	}
