@@ -2,13 +2,20 @@ package com.trinitarias.api_formulario.service;
 
 import java.util.ArrayList;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.trinitarias.api_formulario.dto.ContratacionDto;
+import com.trinitarias.api_formulario.entity.ContratacionEntity;
+import com.trinitarias.api_formulario.repository.ContratacionRepository;
 
 @Service
 public class ContratacionService {
     private ArrayList<ContratacionDto>lista=new ArrayList();
+    
+    @Autowired
+    ContratacionRepository repository;
+    
     
     //Obtener datos Dto
     public ArrayList<ContratacionDto> obtener(){
@@ -26,8 +33,10 @@ public class ContratacionService {
     //Crear Dto
     public ContratacionDto crear(ContratacionDto condto){
         ContratacionDto cdto = condto;
+        ContratacionEntity cEntity = new ContratacionEntity();;
         if(cdto!=null){
             lista.add(cdto);
+            repository.save(cEntity.transformFromDtoToEntity(cdto));
             return cdto;
         }else{
             return null;
