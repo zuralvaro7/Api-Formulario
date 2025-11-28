@@ -5,13 +5,13 @@ public class ContratacionMetodoPago {
 	private String tipoPago;
 	private String nombreTitular;
 	private String fechaCaducidad;
-	private int cvv;
+	private String cvv;
 
 	public ContratacionMetodoPago() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public ContratacionMetodoPago(String tipoPago, String nombreTitular, String fechaCaducidad, int cvv) {
+	public ContratacionMetodoPago(String tipoPago, String nombreTitular, String fechaCaducidad, String cvv) {
 		super();
 		this.tipoPago = tipoPago;
 		this.nombreTitular = nombreTitular;
@@ -43,11 +43,11 @@ public class ContratacionMetodoPago {
 		this.fechaCaducidad = fechaCaducidad;
 	}
 
-	public int getCvv() {
+	public String getCvv() {
 		return cvv;
 	}
 
-	public void setCvv(int cvv) {
+	public void setCvv(String cvv) {
 		this.cvv = cvv;
 	}
 

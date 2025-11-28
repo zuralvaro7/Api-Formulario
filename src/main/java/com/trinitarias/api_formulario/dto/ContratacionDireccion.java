@@ -8,7 +8,7 @@ public class ContratacionDireccion {
 	private String piso;
 	private String puerta;
 	private String tipoVivienda;
-	private int codPostal;
+	private String codPostal;
 	private String provincia;
 	private String localidad;
 	private String pais;
@@ -18,7 +18,7 @@ public class ContratacionDireccion {
 	}
 
 	public ContratacionDireccion(String tipoVia, String via, String numero, String piso, String puerta,
-			String tipoVivienda, int codPostal, String provincia, String localidad, String pais) {
+			String tipoVivienda, String codPostal, String provincia, String localidad, String pais) {
 		super();
 		this.tipoVia = tipoVia;
 		this.via = via;
@@ -80,11 +80,11 @@ public class ContratacionDireccion {
 		this.tipoVivienda = tipoVivienda;
 	}
 
-	public int getCodPostal() {
+	public String getCodPostal() {
 		return codPostal;
 	}
 
-	public void setCodPostal(int codPostal) {
+	public void setCodPostal(String codPostal) {
 		this.codPostal = codPostal;
 	}
 

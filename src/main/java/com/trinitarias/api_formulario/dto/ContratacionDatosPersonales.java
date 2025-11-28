@@ -47,7 +47,7 @@ public class ContratacionDatosPersonales {
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
 	}
-	
+
 
 	public String getFechaNacimiento() {
 		return fechaNacimiento;
@@ -97,7 +97,5 @@ public class ContratacionDatosPersonales {
 	public void setEstadocivil(String estadocivil) {
 		this.estadocivil = estadocivil;
 	}
-	
-	
-	
+
 }

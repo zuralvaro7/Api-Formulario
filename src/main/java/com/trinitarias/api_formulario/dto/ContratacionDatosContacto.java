@@ -2,8 +2,8 @@ package com.trinitarias.api_formulario.dto;
 
 public class ContratacionDatosContacto {
 
-	private int movil;
-	private int fijo;
+	private String movil;
+	private String fijo;
 	private String email;
 	private String linkedin;
 	private String twitter;
@@ -13,7 +13,7 @@ public class ContratacionDatosContacto {
 		// TODO Auto-generated constructor stub
 	}
 
-	public ContratacionDatosContacto(int movil, int fijo, String email, String linkedin, String twitter, String web) {
+	public ContratacionDatosContacto(String movil, String fijo, String email, String linkedin, String twitter, String web) {
 		super();
 		this.movil = movil;
 		this.fijo = fijo;
@@ -23,19 +23,19 @@ public class ContratacionDatosContacto {
 		this.web = web;
 	}
 
-	public int getMovil() {
+	public String getMovil() {
 		return movil;
 	}
 
-	public void setMovil(int movil) {
+	public void setMovil(String movil) {
 		this.movil = movil;
 	}
 
-	public int getFijo() {
+	public String getFijo() {
 		return fijo;
 	}
 
-	public void setFijo(int fijo) {
+	public void setFijo(String fijo) {
 		this.fijo = fijo;
 	}
 
