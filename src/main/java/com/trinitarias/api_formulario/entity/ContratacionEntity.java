@@ -70,8 +70,11 @@ public class ContratacionEntity {
 	@Column(name="nacionalidad")
 	private String nacionalidad;
 
-	@Column(name="identificacion")
-	private String identificacion;
+	@Column(name="tipoIdentificacion")
+	private String tipoIdentificacion;
+	
+	@Column(name="numeroIdentificacion")
+	private String numeroIdentificacion;
 
 	@Column(name="estadocivil")
 	private String estadocivil;
@@ -124,13 +127,14 @@ public class ContratacionEntity {
 	public ContratacionEntity() {}
 
 	//CONSTRUCTOR CON ATRIBUTOS
-	public ContratacionEntity(String nombreBanco, String iban, String bic, String tipoCuenta, String sucursal,
+	public ContratacionEntity(Long id, String nombreBanco, String iban, String bic, String tipoCuenta, String sucursal,
 			String movil, String fijo, String email, String linkedin, String twitter, String web, String nombre,
-			String apellidos, String fechaNacimiento, String genero, String nacionalidad, String identificacion,
-			String estadocivil, String tipoVia, String via, String numero, String piso, String puerta,
-			String tipoVivienda, String codPostal, String provincia, String localidad, String pais, String tipoPago,
-			String nombreTitular, String fechaCaducidad, String cvv) {
-		
+			String apellidos, String fechaNacimiento, String genero, String nacionalidad, String tipoIdentificacion,
+			String numeroIdentificacion, String estadocivil, String tipoVia, String via, String numero, String piso,
+			String puerta, String tipoVivienda, String codPostal, String provincia, String localidad, String pais,
+			String tipoPago, String nombreTitular, String fechaCaducidad, String cvv) {
+		super();
+		this.id = id;
 		this.nombreBanco = nombreBanco;
 		this.iban = iban;
 		this.bic = bic;
@@ -139,31 +143,31 @@ public class ContratacionEntity {
 		this.movil = movil;
 		this.fijo = fijo;
 		this.email = email;
-        this.linkedin = linkedin;
-        this.twitter = twitter;
-        this.web = web;
-        this.nombre = nombre;
-        this.apellidos = apellidos;
-        this.fechaNacimiento = fechaNacimiento;
-        this.genero = genero;
-        this.nacionalidad = nacionalidad;
-        this.identificacion = identificacion;
-        this.estadocivil = estadocivil;
-        this.tipoVia = tipoVia;
-        this.via = via;
-        this.numero = numero;
-        this.piso = piso;
-        this.puerta = puerta;
-        this.tipoVivienda = tipoVivienda;
-        this.codPostal = codPostal;
-        this.provincia = provincia;
-        this.localidad = localidad;
-        this.pais = pais;
-        this.tipoPago = tipoPago;
-        this.nombreTitular = nombreTitular;
-        this.fechaCaducidad = fechaCaducidad;
-        this.cvv = cvv;
-        
+		this.linkedin = linkedin;
+		this.twitter = twitter;
+		this.web = web;
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.fechaNacimiento = fechaNacimiento;
+		this.genero = genero;
+		this.nacionalidad = nacionalidad;
+		this.tipoIdentificacion = tipoIdentificacion;
+		this.numeroIdentificacion = numeroIdentificacion;
+		this.estadocivil = estadocivil;
+		this.tipoVia = tipoVia;
+		this.via = via;
+		this.numero = numero;
+		this.piso = piso;
+		this.puerta = puerta;
+		this.tipoVivienda = tipoVivienda;
+		this.codPostal = codPostal;
+		this.provincia = provincia;
+		this.localidad = localidad;
+		this.pais = pais;
+		this.tipoPago = tipoPago;
+		this.nombreTitular = nombreTitular;
+		this.fechaCaducidad = fechaCaducidad;
+		this.cvv = cvv;
 	}
 
 	public Long getId() {
@@ -302,12 +306,20 @@ public class ContratacionEntity {
 		this.nacionalidad = nacionalidad;
 	}
 
-	public String getIdentificacion() {
-		return identificacion;
+	public String getTipoIdentificacion() {
+		return tipoIdentificacion;
 	}
 
-	public void setIdentificacion(String identificacion) {
-		this.identificacion = identificacion;
+	public void setTipoIdentificacion(String tipoIdentificacion) {
+		this.tipoIdentificacion = tipoIdentificacion;
+	}
+
+	public String getNumeroIdentificacion() {
+		return numeroIdentificacion;
+	}
+
+	public void setNumeroIdentificacion(String numeroIdentificacion) {
+		this.numeroIdentificacion = numeroIdentificacion;
 	}
 
 	public String getEstadocivil() {
@@ -438,7 +450,7 @@ public class ContratacionEntity {
 		entity.setFechaNacimiento(dto.getDatosPersonales().getFechaNacimiento());
 		entity.setGenero(dto.getDatosPersonales().getGenero());
 		entity.setNacionalidad(dto.getDatosPersonales().getNacionalidad());
-		entity.setIdentificacion(dto.getDatosPersonales().getIdentificacion());
+		entity.setNumeroIdentificacion(dto.getDatosPersonales().getNumIdentificacion());
 		entity.setEstadocivil(dto.getDatosPersonales().getEstadocivil());
 		
 		// DATOS CONTACTO

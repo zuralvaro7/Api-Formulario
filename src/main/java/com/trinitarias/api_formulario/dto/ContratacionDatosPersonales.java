@@ -7,7 +7,8 @@ public class ContratacionDatosPersonales {
 	private String fechaNacimiento;
 	private String genero;
 	private String nacionalidad;
-	private String identificacion;
+	private String tipoIdentificacion;
+	private String numIdentificacion;
 	private String estadocivil;
 	
 	
@@ -17,14 +18,15 @@ public class ContratacionDatosPersonales {
 
 
 	public ContratacionDatosPersonales(String nombre, String apellidos, String fechaNacimiento, String genero, String nacionalidad,
-			String identificacion, String estadocivil) {
+			String tipoIdentificacion, String numIdentificacion, String estadocivil) {
 		super();
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.fechaNacimiento = fechaNacimiento;
 		this.genero = genero;
 		this.nacionalidad = nacionalidad;
-		this.identificacion = identificacion;
+		this.tipoIdentificacion = tipoIdentificacion;
+		this.numIdentificacion = numIdentificacion;
 		this.estadocivil = estadocivil;
 	}
 
@@ -79,13 +81,23 @@ public class ContratacionDatosPersonales {
 	}
 
 
-	public String getIdentificacion() {
-		return identificacion;
+	public String getTipoIdentificacion() {
+		return tipoIdentificacion;
 	}
 
 
-	public void setIdentificacion(String identificacion) {
-		this.identificacion = identificacion;
+	public void setTipoIdentificacion(String tipoIdentificacion) {
+		this.tipoIdentificacion = tipoIdentificacion;
+	}
+
+
+	public String getNumIdentificacion() {
+		return numIdentificacion;
+	}
+
+
+	public void setNumIdentificacion(String numIdentificacion) {
+		this.numIdentificacion = numIdentificacion;
 	}
 
 
@@ -97,5 +109,6 @@ public class ContratacionDatosPersonales {
 	public void setEstadocivil(String estadocivil) {
 		this.estadocivil = estadocivil;
 	}
+	
 
 }
