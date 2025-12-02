@@ -114,9 +114,9 @@ public class ContratacionValidator implements Validator {
 
 		if (cntcDto.getDatosContacto().getEmail().isBlank()) {
 			errors.rejectValue("datosContacto.email", "i18n.email.obligatorio", "El campo debe ser obligatorio");
-		} else if(!cntcDto.getDatosContacto().getEmail().contains("@")) {
+		} else if(cntcDto.getDatosContacto().getEmail().indexOf('@')<0 || cntcDto.getDatosContacto().getEmail().indexOf('.')<0 || cntcDto.getDatosContacto().getEmail().indexOf('@')>cntcDto.getDatosContacto().getEmail().indexOf('.')) {
 			errors.rejectValue("datosContacto.email", "i18n.email.formato", "El campo debe ser un email");
-		}
+		} 
 	}
 
 	private void validateDireccion(Errors errors, ContratacionDto cntcDto) {
